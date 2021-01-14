@@ -1,0 +1,31 @@
+{
+    "taskRoleArn": "ECS-task-full-access",
+    "containerDefinitions": [{
+        "memory": 128,
+        "essential": true,
+        "name": "amazonlinux",
+        "image": "amazonlinux",
+        "entryPoint": [
+            "/bin/bash",
+            "-c"
+        ],
+        "command": [],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "ecs-tasks",
+                "awslogs-region": "ca-central-1",
+                "awslogs-stream-prefix": "awslz-pbmm-param-extractor"
+            }
+        }
+    }],
+    "family": "awslz-pbmm-param-extractor",
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "volumes": [],
+    "placementConstraints": [],
+    "networkMode": null,
+    "memory": null,
+    "cpu": null
+}
